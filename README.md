@@ -29,17 +29,13 @@ Local vector database (ChromaDB) + RAG system for searching personal documents s
 - **Ollama** running locally (`http://localhost:11434`)
   - Embedding model: `nomic-embed-text`
   - Chat model: `qwen3:8b`
-- **ChromaDB**, **pypdf**, **openpyxl**, **python-pptx** (installed in `.venv`)
+- Global Python packages: **chromadb**, **pypdf**, **openpyxl**, **python-pptx**
 
 ## Setup
 
 ```bash
-# Create virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
-
-# Install dependencies
-pip install chromadb pypdf openpyxl python-pptx
+# Install dependencies globally
+pip3 install chromadb pypdf openpyxl python-pptx
 ```
 
 ## Usage
@@ -49,7 +45,6 @@ pip install chromadb pypdf openpyxl python-pptx
 Scan `~/Public`, convert to Markdown, chunk, embed, and store in ChromaDB:
 
 ```bash
-source .venv/bin/activate
 python3 ingest.py              # Full vault
 python3 ingest.py 00_Career    # Specific subfolder only
 ```
@@ -57,7 +52,6 @@ python3 ingest.py 00_Career    # Specific subfolder only
 ### 2. Query the knowledge base
 
 ```bash
-source .venv/bin/activate
 python3 query.py "最近2年的保險費用"
 python3 query.py "2024年の旅行プラン"
 python3 query.py "AWS証明書は何を持っていますか？"
@@ -68,7 +62,6 @@ python3 query.py "AWS証明書は何を持っていますか？"
 Detects new, modified, or deleted files and syncs to ChromaDB:
 
 ```bash
-source .venv/bin/activate
 python3 auto_sync.py
 ```
 

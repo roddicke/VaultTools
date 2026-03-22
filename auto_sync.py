@@ -10,6 +10,7 @@ Usage:
 Designed to be run via launchd (twice daily).
 """
 
+import sys
 import os
 import json
 import hashlib
@@ -158,7 +159,7 @@ def main():
     # Handle deleted files
     for source in deleted_sources:
         log(f"❌ Deleted: {Path(source).name}")
-        remove_file_chunks(collection, source)
+        remove_file_chunks(collection, str(source))
 
     # Handle modified files (remove old, re-ingest)
     for filepath in modified_files:

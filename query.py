@@ -8,6 +8,7 @@ Usage:
 """
 
 import sys
+import os
 import json
 import urllib.request
 import chromadb

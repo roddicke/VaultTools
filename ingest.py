@@ -7,7 +7,7 @@ Usage:
     source /Users/chaomingou/Documents/VaultTools/.venv/bin/activate
     python /Users/chaomingou/Documents/VaultTools/ingest.py [subpath]
 """
-
+import sys
 import os
 import hashlib
 import json
