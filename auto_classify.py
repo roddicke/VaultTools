@@ -12,7 +12,7 @@ from pathlib import Path
 
 # ─── Configuration ───────────────────────────────────────────────────────────
 
-VAULT_PATH = Path("/Users/chaomingou/Public")
+VAULT_PATH = Path.home() / "Public"
 OLLAMA_MODEL = "qwen3:8b" # Or "mistral", "gemma", etc. 
 CATEGORIES = [
     "00_Career",

@@ -4,8 +4,8 @@ auto_sync.py - Automatically detect new, modified, or deleted files
 in the Public vault and sync them to the ChromaDB vector database.
 
 Usage:
-    source /Users/chaomingou/Developer/VaultTools/.venv/bin/activate
-    python /Users/chaomingou/Developer/VaultTools/auto_sync.py
+    source Path(__file__).resolve().parent/.venv/bin/activate
+    python Path(__file__).resolve().parent/auto_sync.py
 
 Designed to be run via launchd (twice daily).
 """
@@ -29,7 +29,8 @@ from ingest import (
     discover_files, file_hash, detect_category
 )
 
-LOG_FILE = Path("/Users/chaomingou/Developer/VaultTools/logs/auto_sync.log")
+BASE_DIR = Path(__file__).resolve().parent
+LOG_FILE = BASE_DIR / "logs" / "auto_sync.log"
 
 
 def log(msg: str):

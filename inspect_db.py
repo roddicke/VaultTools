@@ -3,7 +3,8 @@ import chromadb
 from pathlib import Path
 import sys
 
-CHROMA_PATH = Path("/Users/chaomingou/Developer/VaultTools/.chromadb")
+BASE_DIR = Path(__file__).resolve().parent
+CHROMA_PATH = BASE_DIR / ".chromadb"
 COLLECTION_NAME = "public_vault"
 
 def inspect():
