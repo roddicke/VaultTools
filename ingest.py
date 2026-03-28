@@ -4,8 +4,8 @@ ingest.py - Scan the Public vault, extract text, convert to Markdown,
 generate embeddings via Ollama, and store them in a local ChromaDB instance.
 
 Usage:
-    source /Users/chaomingou/Documents/VaultTools/.venv/bin/activate
-    python /Users/chaomingou/Documents/VaultTools/ingest.py [subpath]
+    source /Users/chaomingou/Developer/VaultTools/.venv/bin/activate
+    python /Users/chaomingou/Developer/VaultTools/ingest.py [subpath]
 """
 import sys
 import os
@@ -18,7 +18,7 @@ from typing import Optional, List
 # ─── Configuration ───────────────────────────────────────────────────────────
 
 VAULT_PATH = Path("/Users/chaomingou/Public")
-CHROMA_PATH = Path("/Users/chaomingou/Documents/VaultTools/.chromadb")
+CHROMA_PATH = Path("/Users/chaomingou/Developer/VaultTools/.chromadb")
 COLLECTION_NAME = "public_vault"
 OLLAMA_EMBED_MODEL = "nomic-embed-text"
 

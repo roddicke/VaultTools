@@ -7,3 +7,4 @@ __pycache__/
 *.pyd
 .env
 logs/
+llm_dialogue_log.txt

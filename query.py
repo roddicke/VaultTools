@@ -3,8 +3,8 @@
 query.py - Search the Public vault vector database using natural language.
 
 Usage:
-    source /Users/chaomingou/Documents/VaultTools/.venv/bin/activate
-    python /Users/chaomingou/Documents/VaultTools/query.py "我去年去日本花了多少錢？"
+    source /Users/chaomingou/Developer/VaultTools/.venv/bin/activate
+    python /Users/chaomingou/Developer/VaultTools/query.py "我去年去日本花了多少錢？"
 """
 
 import sys
@@ -19,7 +19,7 @@ from collections import defaultdict
 
 # ─── Configuration ───────────────────────────────────────────────────────────
 
-CHROMA_PATH = Path("/Users/chaomingou/Documents/VaultTools/.chromadb")
+CHROMA_PATH = Path("/Users/chaomingou/Developer/VaultTools/.chromadb")
 COLLECTION_NAME = "public_vault"
 OLLAMA_EMBED_MODEL = "nomic-embed-text"
 OLLAMA_CHAT_MODEL = "qwen3:8b"
@@ -205,7 +205,7 @@ def query(question: str, show_sources: bool = True):
 
     # Log the query, context, and answer
     log_entry = f"[{datetime.datetime.now().isoformat()}]\nQuestion: {question}\nContext:\n{context}\nAnswer:\n{answer}\n{'-'*40}\n"
-    with open('/Users/chaomingou/Documents/VaultTools/logs/llm_dialogue_log.txt', 'a', encoding='utf-8') as f:
+    with open('/Users/chaomingou/Developer/VaultTools/logs/llm_dialogue_log.txt', 'a', encoding='utf-8') as f:
         f.write(log_entry)
 
 
