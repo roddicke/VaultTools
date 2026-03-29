@@ -29,8 +29,9 @@ pip install -r requirements.txt
 - **Browse DB**: `python3 browse_db.py`
 
 ### 4. macOS Automation (Optional)
-Copy `com.vaulttools.autosync.plist` to `~/Library/LaunchAgents/` and load it:
+The system is pre-configured to run twice daily at **08:00** and **20:00**.
+To enable it, copy `com.vaulttools.autosync.plist` to `~/Library/LaunchAgents/` and load it:
 ```bash
 launchctl load ~/Library/LaunchAgents/com.vaulttools.autosync.plist
 ```
-*(Note: Ensure Python 3 is in your PATH and check Full Disk Access if it fails to read Documents.)*
+*(Note: Ensure `python3` is in your PATH and check Full Disk Access if it fails to read protected folders.)*
